@@ -9,11 +9,13 @@ env = env = environ.Env(
     DEBUG=(bool, False)
 )
 
-def index(request):
+def index(request, heading, name):
     API_KEY = env('NEWS_API_KEY')
-
-    url = 'https://newsapi.org/v2/everything?q=Apple&from=2022-06-17&sortBy=popularity&apiKey='+API_KEY
+    BASE_NEWS_API = env('BASE_NEWS_API')
+    url = BASE_NEWS_API+'/top-headlines?'+heading+'='+name+'&apiKey='+API_KEY
+    
     crypto_news = requests.get(url).json()
+    
     a = crypto_news['articles']
     desc = []
     title = []

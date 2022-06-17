@@ -23,3 +23,4 @@
 ## Phase 1
 - Connect NewsApi through api
 - Show news in news page
+- We have used django-environ for keeping ar secret data
