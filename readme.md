@@ -15,3 +15,11 @@
     - pip install -r requirements.txt
 - Start with virtual env: . venv/bin/activate
 
+## Create App
+- go to the project directory and run:
+    - python3 manage.py startapp NewsApp
+- register this app to NewsfeedPortal/settings.py-> INSTALLED_APPS
+
+## Phase 1
+- Connect NewsApi through api
+- Show news in news page
