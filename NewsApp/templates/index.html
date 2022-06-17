@@ -4,41 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>News</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />
+    <title>News Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 </head>
 <body>
-    <section class="hero is-primary">
-        <div class="hero-body">
+    <section class="section">
+        <div class="card-body">
             <div class="container">
-                <h1 class="title">
+                <h1 class="text-center">
                     Newsfeed Portal
                 </h1>
             </div>
+
+            <div class="form-row">
+                <div class="col">
+                    <h4>Search Country</h4>
+                    <form action="" method="get">
+                        <input type="text" name="country">
+                        <button type="submit" value="Search">Search</button>
+                    </form>
+                </div>
+                <div class="col">
+                    <h4>Search Source</h4>
+                    <form action="" method="get">
+                        <input type="text" name="source">
+                        <button type="submit" value="Search">Search</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
-    <section class="section">
+    <section class="section" style="margin-left: 20rem;">
         <div class="container">
-            <div class="rows">
-                <div class="column is-offset-16 is-10">
-                    {% for title, desc, i in mylist %}
-                    <div class="box">
-                        <article class="media">
-                            <div class="media-content">
-                                <div class="content">
-                                    <p>
-                                        <span class="title">{{ title }}</span>
-                                        <br>
-                                        <img src="{{ i }}" alt="">
-                                        <span class="subtitle">{{ desc }}</span>
-                                        
-                                    </p>
-                                </div>
+            <div class="row">
+                <div class="col-md-16">
+                    {% for i in articles %}
+
+                        <div class="card rounded shadow-lg m-2" style="width: 45rem;">
+                            <img src="{{ i.urlToImage }}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">{{ i.author }}</p>
+                                <h5 class="card-title">{{ i.title }}</h5>
+                                <p class="card-title"><b>{{ i.source.name }}</b></p>
+                                <p class="card-text">{{ i.description }}</p>
+                                <hr>
+                                <small><b>Pubished at:</b> {{ i.publishedAt }}</small>
+                                <a href="{{ i.url }}" target="_blank" class="btn btn-success m-1">See News</a>
                             </div>
-                        </article>
-                    </div>
+                        </div>
                     {% endfor %}
-                </div>
+                </div>  
             </div>
         </div>
     </section>
