@@ -27,4 +27,4 @@ def index(request):
 
     context = {'articles': articles}
 
-    return render(request, 'index.html', context)
+    return render(request, 'newsfeed/index.html', context)
