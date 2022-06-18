@@ -4,22 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <title>SignIn</title>
+    
+    <!-- CSS CUSTOM -->
+    {% load static %}
+    <link rel="stylesheet" type='text/css' href="{% static 'style.css' %}"/>
 </head>
 <body>
-    <h3>SignIn Here</h3>
+    <div id="signin-form-wrap">
+        <h2>SignIn Here</h2>
 
-    <form action="/signin" method="post">
-    {% csrf_token %}
-        <label for="">Username</label>
-        <input type="text" name="username" id="username" placeholder="Enter your Username" required>
-        <br>
+        <form action="/signin" method="post" id="signin-form">
+        {% csrf_token %}
+            <!-- <label for="">Username</label> -->
+            <p>
+                <input type="text" name="username" id="username" placeholder="Enter your Username" required><i class="validation"><span></span><span></span></i>
+            </p>
 
-        <label for="">Password</label>
-        <input type="password" name="pass1" id="pass1" placeholder="Enter your Password" required>
-        <br>
+            <!-- <label for="">Password</label> -->
+            <p>
+                <input type="password" name="pass1" id="password" placeholder="Enter your Password" required><i class="validation"><span></span><span></span></i>
+            </p>
 
-        <button type="submit">SignIn</button>
-    </form>
+            <p>
+                <button type="submit" id="signin">SignIn</button>
+            </p>
+        </form>
+        <div id="create-account-wrap">
+            <p>Not registered yet? <a href="/signup">SignUp Here</a><p>
+        </div>
+    </div>
 </body>
 </html>

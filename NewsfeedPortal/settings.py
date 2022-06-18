@@ -74,6 +74,10 @@ TEMPLATES = [
     },
 ]
 
+STATICFILES_DIRS = [
+    str(BASE_DIR / 'static')
+]
+
 WSGI_APPLICATION = 'NewsfeedPortal.wsgi.application'
 
 

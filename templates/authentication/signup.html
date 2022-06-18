@@ -4,38 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="./style.css">
     <title>SignUp</title>
+
+    <!-- CSS CUSTOM -->
+    {% load static %}
+    <link rel="stylesheet" type='text/css' href="{% static 'style.css' %}"/>
 </head>
 <body>
-    <h3>SignUp Here</h3>
+    <div id="signin-form-wrap">
+        <h3>SignUp Here</h3>
 
-    <form action="/signup" method="post">
-    {% csrf_token %}
-        <label for="">Username</label>
-        <input type="text" name="username" id="username" placeholder="Create your Username" required>
-        <br>
+        <form action="/signup" method="post" id="signin-form">
+        {% csrf_token %}
+            <p>
+                <input type="text" name="username" id="username" placeholder="Create your Username" required>
+            </p>
+            <p>
+                <input type="text" name="fname" id="fname" placeholder="Enter your First Name" required>
+            </p>
 
-        <label for="">First Name</label>
-        <input type="text" name="fname" id="fname" placeholder="Enter your First Name" required>
-        <br>
+            <input type="text" name="lname" id="lname" placeholder="Enter your Last Name" required>
+            <br>
 
-        <label for="">Last Name</label>
-        <input type="text" name="lname" id="lname" placeholder="Enter your Last Name" required>
-        <br>
+            <p>
+                <input type="email" name="email" id="email" placeholder="Enter your Email" required>
+            </p>
 
-        <label for="">Email</label>
-        <input type="email" name="email" id="email" placeholder="Enter your Email" required>
-        <br>
+            <p>
+                <input type="password" name="pass1" id="pass1" placeholder="Enter your Password" required>
+            </p>
 
-        <label for="">Password</label>
-        <input type="password" name="pass1" id="pass1" placeholder="Enter your Password" required>
-        <br>
+            <p>
+                <input type="password" name="pass2" id="pass2" placeholder="Confirm your Passwprd" required>
+            </p>
 
-        <label for="">Confirm Password</label>
-        <input type="password" name="pass2" id="pass2" placeholder="Confirm your Passwprd" required>
-        <br>
-
-        <button type="submit">Sign Up</button>
-    </form>
+            <p>
+                <button type="submit" id="signin">SignUp</button>
+            </p>
+        </form>
+        <div id="create-account-wrap">
+            <p>Already Signed Up? <a href="/signin">SignIn Here</a><p>
+        </div>
+    </div>
 </body>
 </html>
