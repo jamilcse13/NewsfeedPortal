@@ -28,3 +28,6 @@ def index(request):
     context = {'articles': articles}
 
     return render(request, 'newsfeed/index.html', context)
+
+def settings(request):
+    return render(request, 'newsfeed/settings.html')

@@ -35,11 +35,11 @@
         </div>
         <div class="card-body">
             {% if user.is_authenticated %}
-            <button type="submit"><a href="/signout"> SignOut</a></button>
+            <a class="btn btn-danger m-1" href="/signout"> SignOut</a>
             
             {% else %}
-            <button type="submit"><a href="/signup"> SignUp</a></button>
-            <button type="submit"><a href="/signin"> SignIn</a></button>
+            <a class="btn btn-primary m-1" href="/signup"> SignUp</a>
+            <a class="btn btn-success m-1" href="/signin"> SignIn</a>
             
             {% endif %}
         </div>
