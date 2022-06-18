@@ -1,6 +1,8 @@
-## Start a django project
-- Clone the project from this repository
-- You have to install python3 and pip in your machine
+## Instructions to use this *NewsFeedPortal* project
+- Firstly clone the peoject
+- Before use the project you need to install python, pip
+- It's better to use virtual environment for each django project to reduce the virsion confliction
+- I have used virtualenv in this project.
 
 ## Setup Virtual Environment
 - Install virtual environment golabally
@@ -11,13 +13,11 @@
     - pip install -r requirements.txt
 - Start with virtual env: . venv/bin/activate
 
-- run the project:
+## Intallation:
+- I have inclued the required packages inside requirements.txt file. So run-
+    - pip install -r requirements.txt
+- To run the project on your machine:
     - python3 manage.py runserver
-
-## Create App
-- go to the project directory and run:
-    - python3 manage.py startapp NewsApp
-- register this app to NewsfeedPortal/settings.py-> INSTALLED_APPS
 
 ## Phase 1
 - You can see the news feed by this link:
