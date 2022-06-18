@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from NewsApp import views
 
 # Create your views here.
 def home(request):
@@ -39,7 +40,8 @@ def signin(request):
         if user is not None:
             login(request, user)
             fname = user.first_name
-            return render(request, "home.html", {'fname': fname})
+            return redirect(home)
+            # return render(request, "home.html", {'fname': fname})
         else:
             messages.error(request, "Wrong Credentials")
             return redirect('home')
@@ -49,4 +51,4 @@ def signin(request):
 def signout(request):
     logout(request)
     messages.success(request, "Signed Out Successfully!")
-    return redirect(home)
+    return redirect('home')

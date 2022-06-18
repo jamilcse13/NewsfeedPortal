@@ -17,10 +17,11 @@
     </div>
     {% endfor %}
 
-    <h3>Welcome To the Home</h3>
+    <h3>News Portal</h3>
     
     {% if user.is_authenticated %}
-    <h4>Hello, {{ fname }}</h4>
+    <h4>Welcome To the Home</h4>
+    <button type="submit"><a href="/news">Go to Newsfeed</a></button>
     <h5>You have succesfully Signed in</h5>
     <button type="submit"><a href="/signout"> SignOut</a></button>
     

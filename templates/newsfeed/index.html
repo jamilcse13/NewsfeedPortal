@@ -34,8 +34,14 @@
             </div>
         </div>
         <div class="card-body">
-            <button type="submit"><a href="/signup">SignUp</a></button>
-            <button type="submit"><a href="/signin">SignIn</a></button>
+            {% if user.is_authenticated %}
+            <button type="submit"><a href="/signout"> SignOut</a></button>
+            
+            {% else %}
+            <button type="submit"><a href="/signup"> SignUp</a></button>
+            <button type="submit"><a href="/signin"> SignIn</a></button>
+            
+            {% endif %}
         </div>
     </section>
     <section class="section" style="margin-left: 20rem;">
