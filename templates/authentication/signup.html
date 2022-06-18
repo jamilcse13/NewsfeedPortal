@@ -14,30 +14,30 @@
 </head>
 <body>
     <div id="signin-form-wrap">
-        <h3>SignUp Here</h3>
+        <h2>SignUp Form</h2>
 
         <form action="/signup" method="post" id="signin-form">
         {% csrf_token %}
             <p>
-                <input type="text" name="username" id="username" placeholder="Create your Username" required>
+                <input type="text" name="username" id="username" placeholder="Create Username" required>
             </p>
             <p>
-                <input type="text" name="fname" id="fname" placeholder="Enter your First Name" required>
+                <input type="text" name="fname" id="fname" placeholder="First Name" required>
             </p>
 
-            <input type="text" name="lname" id="lname" placeholder="Enter your Last Name" required>
+            <input type="text" name="lname" id="lname" placeholder="Last Name" required>
             <br>
 
             <p>
-                <input type="email" name="email" id="email" placeholder="Enter your Email" required>
+                <input type="email" name="email" id="email" placeholder="Email" required>
             </p>
 
             <p>
-                <input type="password" name="pass1" id="pass1" placeholder="Enter your Password" required>
+                <input type="password" name="pass1" id="pass1" placeholder="Password" required>
             </p>
 
             <p>
-                <input type="password" name="pass2" id="pass2" placeholder="Confirm your Passwprd" required>
+                <input type="password" name="pass2" id="pass2" placeholder="Confirm Password" required>
             </p>
 
             <p>
