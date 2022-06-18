@@ -22,5 +22,13 @@
 ## Phase 1
 - You can see the news feed by this link:
     - BASE_DIR/news     (BASE_DIR= your local serer after ruuning the server)
+    - Here you can see the news. By default the page shows country=uk news
+    - You can filter news by Country and Source from from top left search bar
+
+## Phase 2
+- You can SignUp and SignIn from news directory or home directory
+- After signing in, you will land to home page from where you can SignOut or go to news page
+- You can also Reset your password from SignIn page if you forgot you password
+
 
 
