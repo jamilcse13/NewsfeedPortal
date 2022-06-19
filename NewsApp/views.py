@@ -4,10 +4,11 @@ import environ
 from django.http import HttpResponse
 
 # Create your views here.
-env = env = environ.Env(
+env = environ.Env(
     # set casting, default value
     DEBUG=(bool, False)
 )
+
 
 def index(request):
     API_KEY = env('NEWS_API_KEY')
@@ -28,6 +29,7 @@ def index(request):
     context = {'articles': articles}
 
     return render(request, 'newsfeed/index.html', context)
+
 
 def settings(request):
     return render(request, 'newsfeed/settings.html')
