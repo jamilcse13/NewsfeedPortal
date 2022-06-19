@@ -24,7 +24,7 @@
     - BASE_DIR/news     (BASE_DIR= your local serer after ruuning the server)
     - Here you can see the news. By default the page shows country=uk news
     - You can filter news by Country and Source from from top left search bar
-
+clea
 ## Phase 2
 - You can SignUp and SignIn from news directory or home directory
 - After signing in, you will land to home page from where you can SignOut or go to news page

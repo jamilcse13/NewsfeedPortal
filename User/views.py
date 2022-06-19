@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from NewsApp import views
+from .forms import SettingForm
 
 # Create your views here.
 def home(request):
@@ -52,3 +53,14 @@ def signout(request):
     logout(request)
     messages.success(request, "Signed Out Successfully!")
     return redirect('home')
+
+
+def settings(request):
+    context = {}
+    form = SettingForm(request.POST or None)
+    context['form'] = form
+    if request.POST:
+        if form.is_valid():
+            temp = form.cleaned_data("country_field")
+            print(temp)
+    return render(request, 'settings.html', context)
