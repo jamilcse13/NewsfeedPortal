@@ -1,5 +1,5 @@
 from django.db import models
-from multiselectfield import MultiSelectField
+from django import forms
 from django.contrib.auth.models import User
 
 
@@ -30,6 +30,6 @@ class Setting(models.Model):
 
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    country = MultiSelectField(choices=COUNTRY_CHOICES)
-    source = MultiSelectField(choices=SOURCE_CHOICES)
+    country = forms.MultipleChoiceField(choices=COUNTRY_CHOICES, widget=forms.CheckboxSelectMultiple)
+    source = forms.MultipleChoiceField(choices=SOURCE_CHOICES, widget=forms.CheckboxSelectMultiple)
     keyword = models.CharField(max_length=50, null=True)
