@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('news/', include('NewsApp.urls')),
     path('', include('User.urls')),
+    path('api-auth/', include('rest_framework.urls'))
 ]
