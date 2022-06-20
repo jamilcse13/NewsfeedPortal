@@ -29,6 +29,5 @@ clea
 - You can SignUp and SignIn from news directory or home directory
 - After signing in, you will land to home page from where you can SignOut or go to news page
 - You can also Reset your password from SignIn page if you forgot you password
-
-
+- You can not visit *news/user-news/* and *settings* url's page without signin. If you visit those url's, you will redirected to signin page
 

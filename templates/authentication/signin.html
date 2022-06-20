@@ -15,7 +15,7 @@
     <div id="signin-form-wrap">
         <h2>SignIn Here</h2>
 
-        <form action="/signin" method="post" id="signin-form">
+        <form action="{% url 'signin' %}" method="post" id="signin-form">
         {% csrf_token %}
             <p>
                 <input type="text" name="username" id="username" placeholder="Username" required><i class="validation"><span></span><span></span></i>

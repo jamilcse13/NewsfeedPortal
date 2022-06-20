@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from NewsApp import views
 from .forms import SettingForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def home(request):
@@ -55,6 +56,7 @@ def signout(request):
     return redirect('home')
 
 
+@login_required(login_url='signin')
 def settings(request):
     context = {}
     form = SettingForm(request.POST or None)
@@ -63,4 +65,4 @@ def settings(request):
         if form.is_valid():
             temp = form.cleaned_data("country_field")
             print(temp)
-    return render(request, 'settings.html', context)
+    return render(request, 'user/settings.html', context)
