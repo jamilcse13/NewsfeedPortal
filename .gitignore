@@ -3,7 +3,7 @@
 
 # Python cache.
 __pycache__
-NewsfeedPortal/__pycache__
+NewsfeedPortal/__pycache__/*
 
 # MISC
 .idea
