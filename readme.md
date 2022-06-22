@@ -31,3 +31,6 @@ clea
 - You can also Reset your password from SignIn page if you forgot you password
 - You can not visit *news/user-news/* and *settings* url's page without signin. If you visit those url's, you will redirected to signin page
 
+## Phase 3
+- After signing in, you will arrive a homepage. You can go your settings page or personal news portal from this homepage.
+- In News portal, you can see the news and go to the news source page by clicking *See News* button
