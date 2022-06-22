@@ -6,4 +6,4 @@ django-environ
 requests~=2.28.0
 django-multiselectfield
 #djangorestframework
-$django-cors-headers
+#django-cors-headers
