@@ -2,6 +2,8 @@ from django import forms
 from django.core import validators
 from django.contrib.auth.models import User
 
+from .models import Person
+
 COUNTRY_CHOICES = (
     ('au', 'Australia'),
     ('ca', 'Canada'),
@@ -36,5 +38,11 @@ class SignUpForm(forms.Form):
     pass2 = forms.CharField(widget = forms.PasswordInput, validators = [validators.MinLengthValidator(6)])
 
 class SettingForm(forms.Form):
-    country_field = forms.MultipleChoiceField(choices=COUNTRY_CHOICES)
-    source_field = forms.MultipleChoiceField(choices=SOURCE_CHOICES)
+    country = forms.MultipleChoiceField(choices=COUNTRY_CHOICES)
+    source = forms.MultipleChoiceField(choices=SOURCE_CHOICES)
+
+
+class PersonCreationForm(forms.Form):
+    class Meta:
+        model = Person
+        fields = ('name', 'country', 'source')
