@@ -4,8 +4,10 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from NewsApp import views
-from .forms import SettingForm, SignUpForm
 from django.contrib.auth.decorators import login_required
+
+from .forms import SettingForm, SignUpForm, PersonCreationForm
+from .models import Setting
 
 # Create your views here.
 def home(request):
@@ -66,6 +68,22 @@ def settings(request):
     context['form'] = form
     if request.POST:
         if form.is_valid():
-            temp = form.cleaned_data("country_field")
-            print(temp)
+            country = request.POST['country']
+            source = request.POST['source']
+            setting_data = Setting.objects.create(country=country, source=source)
+            setting_data.save()
+
+            return redirect('setting')
     return render(request, 'user/settings.html', context)
+
+
+# same method like settings() but tried in another way
+@login_required(login_url='signin')
+def setting_create_view(request):
+    form = PersonCreationForm()
+    if request.method == 'POST':
+        form = PersonCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('setting_add')
+    return render(request, 'user/settings.html', {'form': form})

@@ -24,10 +24,11 @@
         <div class="card-body text-center">
             {% if user.is_authenticated %}
             <p>
-                <h3>Welcome To the Home</h3>
+                <h3>Welcome to the Homepage</h3>
             </p>
             <p>
-                <a class="btn btn-success m-1" href="news/user-news">Go to Newsfeed</a>
+                <a class="btn btn-success m-1" href="news/user-news">Go to Your Newsfeed</a>
+                <a class="btn btn-success m-1" href="settings">Go to Setting</a>
             </p>
             <p>
                 <h5 style="color: green;">You have succesfully Signed in!</h5>
@@ -37,6 +38,7 @@
             </p>
             
             {% else %}
+            <a class="btn btn-danger m-1" href="news">Go to Newsfeed</a>
             <a class="btn btn-primary m-1" href="/signup"> SignUp</a>
             <a class="btn btn-success m-1" href="{% url 'signin' %}"> SignIn</a>
             

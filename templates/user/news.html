@@ -13,9 +13,11 @@
         </div>
         <div class="card-body">
             {% if user.is_authenticated %}
+            <a class="btn btn-success m-1" href="/">Go to Homepage</a>
             <a class="btn btn-danger m-1" href="/signout"> SignOut</a>
             
             {% else %}
+            <a class="btn btn-danger m-1" href="/">Go to Homepage</a>
             <a class="btn btn-primary m-1" href="/signup"> SignUp</a>
             <a class="btn btn-success m-1" href="{% url 'signin' %}"> SignIn</a>
             

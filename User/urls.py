@@ -7,7 +7,9 @@ urlpatterns = [
     path('signup', views.signup, name='signup'),
     path(r'^signin/$', views.signin, name="signin"),
     path('signout', views.signout, name='signout'),
-    path('settings', views.settings, name='settings'),
+    path('settings', views.settings, name='setting'),
+    path('settings/add', views.setting_create_view, name='setting_add'),    # tried in another way
+    # path('<int:pk>/setting', views.setting_update_view, name='setting_change'),
 
     # reset password urls
     path('password_reset/', auth_views.PasswordResetView.as_view(), name='password_reset'),
